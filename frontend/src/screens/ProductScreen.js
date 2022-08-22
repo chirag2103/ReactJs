@@ -1,8 +1,4 @@
-
-
-const ProductScreen = {
-    render: () =>{
-        return `<div>Product Screen</div>;`
-    },
-};
+function ProductScreen() {
+  return <div>Product</div>;
+}
 export default ProductScreen;

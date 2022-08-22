@@ -1,60 +1,55 @@
-import data from './data';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import logo from './logo.svg';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 function App() {
   return (
-    <div>
-      <header>
-        <nav className="navbar max-width-1">
-          <div className="left-nav">
-            <span>
-              <a href="">
-                <img src={logo} alt="" />
-              </a>
-            </span>
-            <ul>
-              <li>
-                <a href="">Home</a>
-              </li>
-              <li>
-                <a href="">Blogs</a>
-              </li>
-              <li>
-                <a href="">Contact Us</a>
-              </li>
-              <li>
-                <a href="">About Us</a>
-              </li>
-            </ul>
-          </div>
-          <div className="right-nav">
-            <input
-              className="form-input"
-              type="text"
-              name="search"
-              placeholder="Search Here"
-            />
-            <button className="btn" type="submit">
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
-        </nav>
-      </header>
-      <main>
-        <h1>Featured Products</h1>
-        <div className="products">
-          {data.products.map((product) => (
-            <div className="product">
-              <a href={`/product/${product._id}`}>
-                <img src={product.image} key={product._id} />
-              </a>
-              <p className="product-name">{product.name}</p>
-              <p className="product-price">${product.price}</p>
-              <button>Add to Cart</button>
+    <BrowserRouter>
+      <div>
+        <header>
+          <nav className="navbar max-width-1">
+            <div className="left-nav">
+              <span>
+                <Link to="/">
+                  <img src={logo} alt="" />
+                </Link>
+              </span>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="">Blogs</Link>
+                </li>
+                <li>
+                  <Link to="">Contact Us</Link>
+                </li>
+                <li>
+                  <Link to="">About Us</Link>
+                </li>
+              </ul>
             </div>
-          ))}
-        </div>
-      </main>
-    </div>
+            <div className="right-nav">
+              <input
+                className="form-input"
+                type="text"
+                name="search"
+                placeholder="Search Here"
+              />
+              <button className="btn" type="submit">
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </nav>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/product/:slug" element={<ProductScreen />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
