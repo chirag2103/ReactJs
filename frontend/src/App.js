@@ -2,6 +2,8 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import logo from './logo.svg';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import BlogScreen from './screens/BlogScreen';
+import SignIn from './screens/SignIn';
 function App() {
   return (
     <BrowserRouter>
@@ -19,13 +21,13 @@ function App() {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="">Blogs</Link>
+                  <Link to="/blogs">Blogs</Link>
                 </li>
                 <li>
-                  <Link to="">Contact Us</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </li>
                 <li>
-                  <Link to="">About Us</Link>
+                  <Link to="/about">About Us</Link>
                 </li>
               </ul>
             </div>
@@ -39,6 +41,7 @@ function App() {
               <button className="btn" type="submit">
                 <i className="fa-solid fa-magnifying-glass"></i>
               </button>
+              <Link to="/signin">Sign In</Link>
             </div>
           </nav>
         </header>
@@ -46,6 +49,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/product/:slug" element={<ProductScreen />} />
+            <Route path="/blogs" element={<BlogScreen />} />
+            <Route path="/SignIn" element={<SignIn />} />
           </Routes>
         </main>
       </div>
