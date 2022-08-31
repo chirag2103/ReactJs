@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  width: 100vw;
+  background-color: #f1efef;
+  justify-content: space-around;
+  align-items: center;
+}
+.left-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.left-nav img {
+  width: 50px;
+}
+.left-nav ul {
+  display: flex;
+}
+
+.left-nav ul li {
+  list-style: none;
+}
+.left-nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 0px 10px;
+}
+.right-nav input:active {
+  border: none;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+}
+.right-nav input {
+  font-size: 15px;
+  padding: 5px;
+  transition: 0.5s;
+}
+.right-nav button {
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #efedebb5;
+}
+.right-nav button:hover {
+  cursor: pointer;
+}

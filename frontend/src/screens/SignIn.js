@@ -17,7 +17,7 @@ function SignIn() {
   return (
     <div>
       <div className="img">
-        <div className="content">
+        <div className="signin-content">
           <header>Log In Page</header>
           <form action="#">
             <div className="field">

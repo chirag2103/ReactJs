@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ImageSlider from '../Components/ImageSlider';
+import { SliderData } from '../Components/SliderData';
 // import data from '../data';
 function HomeScreen() {
   const [products, SetProducts] = useState([]);
@@ -13,6 +15,7 @@ function HomeScreen() {
   }, []);
   return (
     <div>
+      <ImageSlider slides={SliderData} />
       <h1>Featured Products</h1>
       <div className="products-area">
         {products.map((product) => (
